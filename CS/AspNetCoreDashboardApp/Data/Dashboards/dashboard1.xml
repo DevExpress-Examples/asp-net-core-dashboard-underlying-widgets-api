@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="SalesPerson" ComponentName="sqlDataSource1">
+      <Connection Name="NWindConnectionString" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="SalesPerson">
+        <Tables>
+          <Table Name="SalesPerson" />
+        </Tables>
+        <Columns>
+          <Column Table="SalesPerson" Name="OrderID" />
+          <Column Table="SalesPerson" Name="Country" />
+          <Column Table="SalesPerson" Name="FirstName" />
+          <Column Table="SalesPerson" Name="LastName" />
+          <Column Table="SalesPerson" Name="ProductName" />
+          <Column Table="SalesPerson" Name="CategoryName" />
+          <Column Table="SalesPerson" Name="OrderDate" />
+          <Column Table="SalesPerson" Name="UnitPrice" />
+          <Column Table="SalesPerson" Name="Quantity" />
+          <Column Table="SalesPerson" Name="Discount" />
+          <Column Table="SalesPerson" Name="ExtendedPrice" />
+          <Column Table="SalesPerson" Name="FullName" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid with highlighted hovered row" DataSource="sqlDataSource1" DataMember="SalesPerson">
+      <InteractivityOptions MasterFilterMode="Single" />
+      <DataItems>
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem1">
+          <NumericFormat FormatType="Currency" />
+        </Measure>
+        <Dimension DataMember="FullName" DefaultId="DataItem3" />
+        <Dimension DataMember="OrderDate" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem0" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Name="Sales Person">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Name="Extended Price">
+          <Measure DefaultId="DataItem1" />
+        </GridMeasureColumn>
+        <GridSparklineColumn Name="Trend">
+          <SparklineValue DefaultId="DataItem0" />
+        </GridSparklineColumn>
+      </GridColumns>
+      <SparklineArgument DefaultId="DataItem2" />
+      <GridOptions />
+    </Grid>
+    <Chart ComponentName="chartDashboardItem1" Name="Animated chart with custom tooltip" DataSource="sqlDataSource1" DataMember="SalesPerson">
+      <DataItems>
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem0" />
+        <Dimension DataMember="CategoryName" Name="Category" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple Name="Extended Price">
+              <Value DefaultId="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Pie ComponentName="pieDashboardItem1" Name="Animated pie with enabled legend" DataSource="sqlDataSource1" DataMember="SalesPerson">
+      <DataItems>
+        <Measure DataMember="ExtendedPrice" Name="Extended Price" SummaryType="Count" DefaultId="DataItem0" />
+        <Dimension DataMember="CategoryName" Name="Category" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem0" />
+      </Values>
+    </Pie>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="63.80741560597676" />
+      <LayoutGroup Orientation="Vertical" Weight="136.19258439402324">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="136.19258439402324" />
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="136.19258439402324" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
