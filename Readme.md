@@ -5,7 +5,7 @@
 * [_Layout.cshtml](./CS/AspNetCoreDashboardApp/Pages/_Layout.cshtml)
 * [widgetsCustomization.js](./CS/ASPxDashboard_UnderlyingWidgets/wwwroot/js/widgetsCustomization.js)
 <!-- default file list end -->
-# How to access API of underlying widgets in the ASP.NET Core Dashboard Control
+# ASP.NET Core Dashboard - How to access API of underlying widgets
 
 
 The following example shows how to customize options of underlying widgets in ASP.NET Core. For this, you need to handle the [onItemWidgetOptionsPrepared](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions?p=netframework#js_devexpress_dashboard_viewerapiextensionoptions_onitemwidgetoptionsprepared) event.
