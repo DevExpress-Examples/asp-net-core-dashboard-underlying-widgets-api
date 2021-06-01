@@ -3,7 +3,7 @@
 
 * [Index.cshtml](./CS/AspNetCoreDashboardApp/Pages/Index.cshtml)
 * [_Layout.cshtml](./CS/AspNetCoreDashboardApp/Pages/_Layout.cshtml)
-* [widgetsCustomization.js](./CS/ASPxDashboard_UnderlyingWidgets/wwwroot/js/widgetsCustomization.js)
+* [widgetsCustomization.js](./CS/AspNetCoreDashboardApp/wwwroot/js/widgetsCustomization.js)
 <!-- default file list end -->
 # ASP.NET Core Dashboard - How to access API of underlying widgets
 
