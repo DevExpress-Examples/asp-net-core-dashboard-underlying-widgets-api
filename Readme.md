@@ -5,7 +5,7 @@
 * [_Layout.cshtml](./CS/AspNetCoreDashboardApp/Pages/_Layout.cshtml)
 * [widgetsCustomization.js](./CS/AspNetCoreDashboardApp/wwwroot/js/widgetsCustomization.js)
 <!-- default file list end -->
-# ASP.NET Core Dashboard - How to access API of underlying widgets
+# Dashboard for ASP.NET Core - How to access API of underlying widgets
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/371736161/)**
 <!-- run online end -->
