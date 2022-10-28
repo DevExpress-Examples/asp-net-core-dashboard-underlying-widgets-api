@@ -3,18 +3,7 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1002173)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
-
-* [Index.cshtml](./CS/AspNetCoreDashboardApp/Pages/Index.cshtml)
-* [_Layout.cshtml](./CS/AspNetCoreDashboardApp/Pages/_Layout.cshtml)
-* [widgetsCustomization.js](./CS/AspNetCoreDashboardApp/wwwroot/js/widgetsCustomization.js)
-<!-- default file list end -->
 # Dashboard for ASP.NET Core - How to access API of underlying widgets
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/371736161/)**
-<!-- run online end -->
-
 
 The following example shows how to customize options of underlying widgets in ASP.NET Core. For this, you need to handle the [onItemWidgetOptionsPrepared](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions?p=netframework#js_devexpress_dashboard_viewerapiextensionoptions_onitemwidgetoptionsprepared) event.
 
@@ -25,6 +14,12 @@ The customized options are listed below:
 - A custom tooltip appears when a user clicks a label on the chart's argument axis. The [onArgumentAxisClick](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/Configuration/#onArgumentAxisClick) property executes a function that invokes the custom tooltip.
 - The [animation](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/Configuration/animation/) is enabled for the [dxChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/) and [dxPieChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxPieChart/) widgets.
 - The [dxPieChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxPieChart/) widget displays a legend.
+
+## Files to Review:
+
+* [Index.cshtml](./CS/AspNetCoreDashboardApp/Pages/Index.cshtml)
+* [_Layout.cshtml](./CS/AspNetCoreDashboardApp/Pages/_Layout.cshtml)
+* [widgetsCustomization.js](./CS/AspNetCoreDashboardApp/wwwroot/js/widgetsCustomization.js)
 
 ## Documentation
 
