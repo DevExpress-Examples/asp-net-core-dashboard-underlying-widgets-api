@@ -5,15 +5,34 @@
 <!-- default badges end -->
 # Dashboard for ASP.NET Core - How to access API of underlying widgets
 
-The following example shows how to customize options of underlying widgets in ASP.NET Core. For this, you need to handle the [onItemWidgetOptionsPrepared](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions?p=netframework#js_devexpress_dashboard_viewerapiextensionoptions_onitemwidgetoptionsprepared) event.
+The following example shows how to customize options of underlying widgets in ASP.NET Core.
+
+Use the [ViewerApiExtension.on](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtension#js_devexpress_dashboard_viewerapiextension_on) and [ViewerApiExtension.off](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtension#js_devexpress_dashboard_viewerapiextension_off) methods to subscribe and unsubscribe from the events.
+
+The Web Dashboard renders an underlying widget as follows:
+
+1. The Web Dashboard loads the widget’s default configuration.
+
+    The [onItemWidgetOptionsPrepared](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions#js_devexpress_dashboard_viewerapiextensionoptions_onitemwidgetoptionsprepared) event is raised. Handle this event to customize the DevExtreme widget’s options before the widget is rendered.
+
+1. The Web Dashboard renders the UI component with the configured options.
+
+    The [onItemWidgetCreated](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions#js_devexpress_dashboard_viewerapiextensionoptions_onitemwidgetcreated) event is raised. It occurs once for each UI component when the dashboard is loaded to the client. You can use this event to customize the UI component instance.
+
+1. The UI component is updated (for example, when you apply filters or change parameter values).
+
+    The [onItemWidgetUpdated](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.ViewerApiExtensionOptions#js_devexpress_dashboard_viewerapiextensionoptions_onitemwidgetupdated) event is raised. It occurs every time the UI component should be re-rendered. 
+	
 
 The customized options are listed below:
 
 - The hovered grid row is highlighted in the underlying [dxDataGrid](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxDataGrid/).
 - A standard tooltip that appears when a user hovers over a chart's series point is disabled. 
 - A custom tooltip appears when a user clicks a label on the chart's argument axis. The [onArgumentAxisClick](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/Configuration/#onArgumentAxisClick) property executes a function that invokes the custom tooltip.
-- The [animation](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/Configuration/animation/) is enabled for the [dxChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/) and [dxPieChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxPieChart/) widgets.
-- The [dxPieChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxPieChart/) widget displays a legend.
+- The [animation](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/Configuration/animation/) is enabled for the [dxChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxChart/) and [dxPieChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxPieChart/) UI components.
+- The [dxPieChart](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxPieChart/) UI component displays a legend.
+- The font weight and an interval between major ticks are modified in the [dxCircularGauge](https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxCircularGauge/) UI component.
+
 
 ## Files to Review:
 
