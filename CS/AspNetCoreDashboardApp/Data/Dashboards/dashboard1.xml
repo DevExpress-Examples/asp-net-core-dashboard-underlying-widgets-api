@@ -81,13 +81,34 @@
         <Value DefaultId="DataItem0" />
       </Values>
     </Pie>
+    <Gauge ComponentName="gaugeDashboardItem1" Name="Gauges with modified ticks and font weight" DataSource="sqlDataSource1" DataMember="SalesPerson">
+      <DataItems>
+        <Measure DataMember="ExtendedPrice" SummaryType="Count" DefaultId="DataItem0" />
+        <Measure DataMember="Quantity" DefaultId="DataItem1" />
+      </DataItems>
+      <GaugeElement>
+        <ActualValue DefaultId="DataItem0" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+      </GaugeElement>
+      <GaugeElement>
+        <ActualValue DefaultId="DataItem1" />
+        <AbsoluteVariationNumericFormat />
+        <PercentVariationNumericFormat />
+        <PercentOfTargetNumericFormat />
+      </GaugeElement>
+    </Gauge>
   </Items>
   <LayoutTree>
     <LayoutGroup>
       <LayoutItem DashboardItem="gridDashboardItem1" Weight="63.80741560597676" />
       <LayoutGroup Orientation="Vertical" Weight="136.19258439402324">
-        <LayoutItem DashboardItem="chartDashboardItem1" Weight="136.19258439402324" />
-        <LayoutItem DashboardItem="pieDashboardItem1" Weight="136.19258439402324" />
+        <LayoutGroup Weight="135.2921375550545">
+          <LayoutItem DashboardItem="gaugeDashboardItem1" Weight="139.22033880949846" />
+          <LayoutItem DashboardItem="chartDashboardItem1" Weight="133.16482997854803" />
+        </LayoutGroup>
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="137.093031232992" />
       </LayoutGroup>
     </LayoutGroup>
   </LayoutTree>
