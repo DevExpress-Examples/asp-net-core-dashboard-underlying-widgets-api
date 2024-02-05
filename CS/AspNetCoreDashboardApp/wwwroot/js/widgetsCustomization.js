@@ -1,5 +1,5 @@
 function onBeforeRender(s, e) {
-    var viewerApiExtension = s.findExtension('viewer-api');
+    var viewerApiExtension = s.findExtension('viewerApi');
     if (viewerApiExtension) {
         viewerApiExtension.on('itemWidgetOptionsPrepared', customizeWidgetOptions);
         viewerApiExtension.on('itemWidgetUpdated', customizeWidget);
